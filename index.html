@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drone control Panel</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <link rel="stylesheet" href="map.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="video.css">
+
+</head>
+<body>
+    <div class="container">
+        <h1>Drone Control Panel</h1>
+        <div class="controls">
+            <div id="map"></div>
+            <video id="webcam-video" autoplay playsinline></video>
+        </div>
+        <h2>Controllers</h2>
+        <div class="inform-panel">
+            <p style="text-align: center">
+                Battery charge level: <span></span> %
+                Height: <span></span> m
+                Speed: <span></span> km/h
+                Status: <span id="inftoggleSwitch"></span>
+            </p>
+        </div>
+        <div class="buttons-container">
+            <div class="switch-container"> 
+                <span class="switch-label">Power</span>
+                <label class="switch">
+                  <input type="checkbox" id="toggleSwitch">
+                  <span class="slider"></span>
+                </label>
+            </div> 
+            <div class="joystick-container">
+                <p style="text-align: center">
+                    X: <span id="x_coordinate"> </span>
+                    Y: <span id="y_coordinate"> </span>
+                    Speed: <span id="speed"> </span> %
+                    Angle: <span id="angle"> </span>
+                </p>
+                <canvas id="canvas" name="game"></canvas>
+            </div>
+            <div class="up-down-container">
+                <button id="upButton" class="button">⋀</button>
+                <button id="downButton" class="button">⋁</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="joystick_script.js"></script>
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet-rotatedmarker/0.2.1/leaflet.rotatedMarker.js"></script>
+    <script src="map_script.js"></script>
+    <script src="video_script.js"></script>
+    <script src="up-down-script.js"></script>
+    <script src="switch-script.js"></script>
+</body>
+</html>
